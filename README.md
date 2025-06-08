@@ -2,6 +2,10 @@
 
 A financial sentiment classification app that fine-tunes FinBERT to detect **positive**, **neutral**, or **negative** sentiment in financial headlines or statements. Built using Hugging Face Transformers and Streamlit, the app is fully local and customizable.
 
+<p align="center">
+  <img src="doc/APP.png" alt="APP" width="600"/>
+</p>
+
 ---
 
 ## 🚀 Features
