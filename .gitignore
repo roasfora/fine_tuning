@@ -1,0 +1,59 @@
+# 🔒 Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.ipynb_checkpoints
+
+# 🐍 Virtual Environments
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+.venv.bak/
+
+# 🌱 Environment Files
+.env
+*.env
+
+# 🧪 Data & Training Files
+data/
+*.csv
+*.tsv
+*.json
+*.xlsx
+
+# 🤖 Model Artifacts
+models/
+*.bin
+*.pt
+*.h5
+*.ckpt
+
+# 📦 Package Build Artifacts
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 🗂️ Logs & Outputs
+*.log
+*.tmp
+*.out
+
+# 📺 Streamlit
+.streamlit/
+.cache/
+
+# 🖥️ OS-Specific Files
+.DS_Store
+Thumbs.db
+
+# 🔑 Secrets / Tokens / Keys
+*.secret
+*.key
+*.token
+*.pem
+*.crt
