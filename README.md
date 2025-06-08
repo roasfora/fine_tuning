@@ -141,15 +141,75 @@ pip install -r requirements.txt
 
 ---
 
-## 👤 Author
-
-**Your Name**  
-📧 your.email@example.com  
-🌐 [GitHub](https://github.com/yourusername)  
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile)
-
----
 
 ## 🛡 License
 
 MIT License – feel free to use, modify, and distribute with attribution.
+
+
+---
+
+## 📰 News Scraping and Sentiment Labeling Pipeline
+
+This project includes a module to scrape financial news from the [Finnhub API](https://finnhub.io/) and label each headline using **FinBERT** (a RoBERTa-based financial sentiment model).
+
+### 🧩 Part 1 — Scrape News Headlines
+
+**Script**: `scraping_finance/fetch_finnhub_news.py`
+
+This script:
+
+- Uses your **Finnhub API key**
+- Fetches recent news headlines for selected **S&P 500 tickers**
+- Saves the headlines and metadata to a CSV
+
+**Run:**
+```bash
+python scraping_finance/fetch_finnhub_news.py
+```
+
+**Output Example:**
+```
+scraping_finance/data/finnhub_news_YYYYMMDD.csv
+```
+
+### 🧠 Part 2 — Sentiment Labeling with FinBERT
+
+**Script**: `scraping_finance/label_with_finbert.py`
+
+This script:
+
+- Loads the scraped CSV
+- Applies the RoBERTa-based FinBERT model
+- Labels each headline with a sentiment: `positive`, `neutral`, or `negative`
+- Saves the cleaned and labeled dataset
+
+**Run:**
+```bash
+python scraping_finance/label_with_finbert.py
+```
+
+**Output:**
+```
+finbert_sentiment_app/data/financial_texts.csv
+```
+
+This CSV file is then used in `finetune.py` for training your custom model.
+
+---
+
+## 🔁 Workflow Summary
+
+```bash
+# 1. Scrape financial headlines
+python scraping_finance/fetch_finnhub_news.py
+
+# 2. Label headlines with FinBERT
+python scraping_finance/label_with_finbert.py
+
+# 3. Fine-tune sentiment model
+python finbert_sentiment_app/finetune.py
+
+# 4. Launch UI
+streamlit run finbert_sentiment_app/app.py
+```
