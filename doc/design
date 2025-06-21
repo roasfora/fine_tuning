@@ -1,0 +1,13 @@
+User Input (Streamlit)
+        ↓
+ Tokenizer (Hugging Face AutoTokenizer)
+        ↓
+Encoded Tensors (input_ids, attention_mask)
+        ↓
+     FinBERT (AutoModelForSequenceClassification)
+        ↓
+     Logits → Softmax → Probabilities
+        ↓
+     Argmax → Label
+        ↓
+      Streamlit Output (label + confidence)
